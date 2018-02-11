@@ -15,7 +15,8 @@ def main():
 			open(newfile, 'w+')
 			coords = point.split(' ')
 			dim = corners(float(coords[0]), float(coords[1]))
-
+			
+			# this could be factored into a method
 			# gdalwarp -te xmin ymin xmax ymax -ts 512 512 -overwrite inpf destf
 			call = ('gdalwarp -te ' + str(dim[0]) + ' ' + str(dim[1]) + ' ' 
 				+ str(dim[2]) + ' ' + str(dim[3]) + ' -ts 512 512 -overwrite strip_img/' 
